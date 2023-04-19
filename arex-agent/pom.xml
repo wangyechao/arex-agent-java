@@ -235,7 +235,14 @@
                         <phase>package</phase>
                         <configuration>
                             <target>
+                                <!--Apache Ant Tasks https://ant.apache.org/manual/index.html-->
                                 <mkdir dir="../arex-agent-jar" />
+                                <delete>
+                                    <fileset dir="../arex-agent-jar">
+                                        <include name="arex-agent-*.jar"/>
+                                        <include name="arex-agent-bootstrap-*.jar"/>
+                                    </fileset>
+                                </delete>
                                 <copy todir="../arex-agent-jar">
                                     <fileset dir="../arex-agent/target/" includes="arex-agent-*.jar" />
                                     <fileset dir="../arex-agent-bootstrap/target/" includes="arex-agent-bootstrap-*.jar" />

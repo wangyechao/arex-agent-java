@@ -87,7 +87,7 @@ public class DataCollectorService implements DataCollector {
                     continue;
                 }
                 HealthManager.reportUsedTime(System.nanoTime() - entity.getQueueTime(), true);
-                saveData(entity);
+//                saveData(entity);
                 if (HealthManager.isFastRejection()) {
                     doSleep(100);
                 }

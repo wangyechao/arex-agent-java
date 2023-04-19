@@ -86,6 +86,7 @@ public final class MockUtils {
     }
 
     public static void recordMocker(Mocker requestMocker) {
+        LOGGER.info("[arex] category: {}, operation: {}, recordId: {}", requestMocker.getCategoryType().getName(), requestMocker.getOperationName(), requestMocker.getRecordId());
         String postJson = Serializer.serialize(requestMocker);
         DataService.INSTANCE.save(postJson);
     }
